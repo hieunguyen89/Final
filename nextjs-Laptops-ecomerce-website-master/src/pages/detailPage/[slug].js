@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import Navbar from '../../components/navbar';
 import Features from '../../components/features';
-import Footer from '../../components/footer';
-import NewsLetter from '../../components/NewsLetter.js/index.js';
+import Layout from '../../components/mainlayout/mainlayout'
 import GlobalStyle, { Container } from '../../globalStyles';
 import DetailBaner from '../../DetailComponents/DetailBaner';
 import Spining from '../../components/Spining';
 import { RecentArival } from '../../../utilits/Laptops';
-import CartProvider from '../../components/context';
+
 import ProductDetail from '../../DetailComponents/ProductDetail';
 
 const LaptopDetail = () => {
@@ -42,18 +40,15 @@ const LaptopDetail = () => {
 	}
 	return (
 		<>
-			<CartProvider>
-				<GlobalStyle />
+			<Layout>
 				<Spining spining={spining} />
-				<Navbar />
+			
 				<DetailBaner />
 				<Container>
 					<ProductDetail laptop={laptop} />
 					<Features title='You Might Also Like' load='true' />
 				</Container>
-				<NewsLetter />
-				<Footer />
-			</CartProvider>
+				</Layout>
 		</>
 	);
 };

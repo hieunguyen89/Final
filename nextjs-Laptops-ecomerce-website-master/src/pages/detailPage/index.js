@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../../components/navbar';
+import Layout from '../../components/mainlayout/mainlayout'
 import Features from '../../components/features';
-import Footer from '../../components/footer';
-import NewsLetter from '../../components/NewsLetter.js/index.js';
 import GlobalStyle, { Container } from '../../globalStyles';
 import Spining from '../../components/Spining';
 import Hero from '../../components/Banner/Hero';
 import BannerSlider from '../../components/Banner/bannerSlider';
-import CartProvider from '../../components/context';
+
 
 const LaptopDetail = () => {
 	const [spining, setSpining] = useState(true);
@@ -20,10 +18,9 @@ const LaptopDetail = () => {
 
 	return (
 		<>
-			<CartProvider>
-				<GlobalStyle />
+			<Layout>
 				<Spining spining={spining} />
-				<Navbar />
+				
 				<Hero hero='detailbanner'>
 					<BannerSlider
 						title='laptops page'
@@ -33,9 +30,7 @@ const LaptopDetail = () => {
 				<Container>
 					<Features title='You Might Also Like' load='true' />
 				</Container>
-				<NewsLetter />
-				<Footer />
-			</CartProvider>
+				</Layout>	
 		</>
 	);
 };

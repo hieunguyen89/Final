@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../../components/navbar';
-import Footer from '../../components/footer';
-import NewsLetter from '../../components/NewsLetter.js/index.js';
-import GlobalStyle, { Container } from '../../globalStyles';
-
+import  { Container } from '../../globalStyles';
 import Spining from '../../components/Spining';
 import Hero from '../../components/Banner/Hero';
 import BannerSlider from '../../components/Banner/bannerSlider';
-import CartProvider from '../../components/context';
+import Layout from '../../components/mainlayout/mainlayout'
 import PagesContent from '../../deliveryComponent/PagesContent';
 
 const LegalPage = () => {
@@ -21,10 +17,8 @@ const LegalPage = () => {
 
 	return (
 		<>
-			<CartProvider>
-				<GlobalStyle />
+		<Layout>
 				<Spining spining={spining} />
-				<Navbar />
 				<Hero hero='paymentbanner'>
 					<BannerSlider
 						title='secure payment page'
@@ -38,9 +32,7 @@ const LegalPage = () => {
 With SSL'
 					/>
 				</Container>
-				<NewsLetter />
-				<Footer />
-			</CartProvider>
+				</Layout>
 		</>
 	);
 };

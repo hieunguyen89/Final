@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../../components/navbar';
-import Footer from '../../components/footer';
-import NewsLetter from '../../components/NewsLetter.js/index.js';
 import GlobalStyle, { Container } from '../../globalStyles';
-
+import Layout from '../../components/mainlayout/mainlayout'
 import Spining from '../../components/Spining';
 import Hero from '../../components/Banner/Hero';
 import BannerSlider from '../../components/Banner/bannerSlider';
-import CartProvider from '../../components/context';
 import PagesContent from '../../deliveryComponent/PagesContent';
 
 const Delivery = () => {
@@ -21,10 +17,9 @@ const Delivery = () => {
 
 	return (
 		<>
-			<CartProvider>
-				<GlobalStyle />
+			<Layout>
 				<Spining spining={spining} />
-				<Navbar />
+				
 				<Hero hero='deliverybanner'>
 					<BannerSlider
 						title='delivery page'
@@ -37,9 +32,7 @@ const Delivery = () => {
 						subtitle='Shipments and returns Your pack shipment'
 					/>
 				</Container>
-				<NewsLetter />
-				<Footer />
-			</CartProvider>
+			</Layout>
 		</>
 	);
 };
