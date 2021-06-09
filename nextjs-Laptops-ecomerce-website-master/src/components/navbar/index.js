@@ -5,10 +5,9 @@ import { ImCross } from "react-icons/im";
 import { Container } from "../../globalStyles";
 import { colors } from "../../../utilits/styles";
 import Navitems from "./navItems";
-import { Navheader, togglebar } from "../../../utilits";
+import { Navheader } from "../../../utilits";
 import CartNav from "./cartNav";
 import { cartContext } from "../context";
-import NavToggle from "./navToggle";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -20,6 +19,7 @@ const Navbar = () => {
   useEffect(() => {
     if (navCart) {
       const handleSidebarRight = (e) => {
+        // eslint-disable-next-line no-restricted-globals
         if (ref.current && !ref.current.contains(event.target)) {
           setNavcart(false);
         }
@@ -82,29 +82,22 @@ const Navbar = () => {
                 ))}
               </ul>
               <ul className={toggle ? "nav-ul-sm toggle" : "nav-ul-sm"}>
-                <div className="cross-menue" onClick={() => setToggle(false)}>
-                  <ImCross />
-                  <p>menue</p>
-                </div>
+                <ImCross />
+                <p>menue</p>
                 {Navheader.map((navbar) => (
                   <Navitems key={navbar.id} navbar={navbar} />
-                ))}
-                {togglebar.map((navbar) => (
-                  <NavToggle key={navbar.id} navbar={navbar} />
                 ))}
               </ul>
 
               <div className="right-icons">
                 <FaBars className="icon-right icon-menue" onClick={() => setToggle(true)} />
-                <div className="cart" onClick={() => setNavcart(!navCart)}>
-                  <FaShoppingCart className="icon-right icon-cart" />
-                  <div className="batch">{cartItems.length}</div>
-                  {cartItems.length > 0 && (
-                    <div className={navCart ? "cart-nav" : "hide"} ref={ref}>
-                      <CartNav cartItems={cartItems} total={total} subTotal={subTotal} />
-                    </div>
-                  )}
-                </div>
+                <FaShoppingCart className="icon-right icon-cart" />
+                <div className="batch">{cartItems.length}</div>
+                {cartItems.length > 0 && (
+                  <div className={navCart ? "cart-nav" : "hide"} ref={ref}>
+                    <CartNav cartItems={cartItems} total={total} subTotal={subTotal} />
+                  </div>
+                )}
               </div>
             </div>
           </Container>

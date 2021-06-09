@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import SubCard from "./SubCard";
-import OfferBaner from "../Banner/OfferBaner";
 import { colors } from "../../../utilits/styles";
 import { rotate } from "./keyframes";
 
@@ -9,6 +8,7 @@ const Subbaners = ({ inverse, subbanners }) => (
   <>
     <SubbanerWrapper>
       {subbanners.map((subbanner, index) => (
+        // eslint-disable-next-line react/no-array-index-key
         <SubCard inverse={inverse} key={index} subbanner={subbanner} />
       ))}
     </SubbanerWrapper>

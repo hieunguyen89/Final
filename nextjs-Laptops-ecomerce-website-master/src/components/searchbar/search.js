@@ -1,31 +1,41 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
+import Dropdown from "react-dropdown";
 import styled from "styled-components";
 import { RecentArival } from "../../../utilits/laptops";
 
+const options = ["HP", "Asus", "Dell"];
+const defaultOption = options[0];
+
 const SearchBarSection = () => {
   const [search, setSearch] = useState("");
+  const [brand, setBrand] = useState("HP");
+  const [products, setProducts] = useState(RecentArival);
 
-  const filteredProducts = RecentArival.filter((laptop) => {
-    if (
-      laptop.brand.toLowerCase().includes(search) ||
-      laptop.title.toLowerCase().includes(search) ||
-      laptop.slug.toLowerCase().includes(search)
-    ) {
-      return laptop;
-    }
-    return {};
-  });
+  const onSearch = useCallback(() => {
+    setProducts(RecentArival.filter((laptop) => laptop.title.toLowerCase().includes(search) && laptop.brand === brand));
+  }, [search, brand]);
 
   const handleSearch = (e) => {
     setSearch(e.target.value.toLowerCase());
   };
 
+  const onSelect = (option) => {
+    setBrand(option.label);
+  };
+
+  const changePage = useCallback(() => {
+    onSearch();
+    sessionStorage.setItem(search, brand);
+    window.open("searchPage");
+  }, [search, brand]);
+
   return (
     <Wrapper>
       <div className="searchBarSection">
+        <Dropdown options={options} onChange={onSelect} value={defaultOption} placeholder="Select an option" />;
         <div className="searchBar">
           <input className="input" onChange={handleSearch} />
-          <button type="button" className="button">
+          <button type="button" className="button" onClick={changePage}>
             <svg
               className="w-6 h-6"
               fill="none"
@@ -43,7 +53,7 @@ const SearchBarSection = () => {
           </button>
         </div>
         <div className="display">
-          {filteredProducts.map((laptop) => (
+          {products.map((laptop) => (
             <div key={laptop.title} className="product">
               <h6>{laptop.brand}</h6>
               <h3>{laptop.title}</h3>

@@ -68,7 +68,7 @@ export const RecentArival = [
   },
   {
     id: 5,
-    brand: "HP ",
+    brand: "HP",
     title: "HP Pavilion",
     slug: "HP-Pavilion",
     img: 16,
@@ -84,7 +84,7 @@ export const RecentArival = [
   },
   {
     id: 6,
-    brand: "HP ",
+    brand: "HP",
     title: "HP EliteBook 840",
     slug: "HP-EliteBook-840",
     img: 5,

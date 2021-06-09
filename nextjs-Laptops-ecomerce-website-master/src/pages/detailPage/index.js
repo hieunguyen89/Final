@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../../components/mainlayout/mainlayout";
 import Features from "../../components/features";
-import GlobalStyle, { Container } from "../../globalStyles";
+import { Container } from "../../globalStyles";
 import Spining from "../../components/Spining";
 import Hero from "../../components/Banner/Hero";
 import BannerSlider from "../../components/Banner/bannerSlider";

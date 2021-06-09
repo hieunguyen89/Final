@@ -3,11 +3,10 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Features from "../../components/features";
 import Layout from "../../components/mainlayout/mainlayout";
-import GlobalStyle, { Container } from "../../globalStyles";
+import { Container } from "../../globalStyles";
 import DetailBaner from "../../DetailComponents/DetailBaner";
 import Spining from "../../components/Spining";
 import { RecentArival } from "../../../utilits/Laptops";
-
 import ProductDetail from "../../DetailComponents/ProductDetail";
 
 const LaptopDetail = () => {
@@ -25,6 +24,7 @@ const LaptopDetail = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  // eslint-disable-next-line no-shadow
   const laptop = RecentArival.find((laptop) => laptop.slug === slug);
 
   if (!laptop) {

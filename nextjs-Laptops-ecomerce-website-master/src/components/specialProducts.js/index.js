@@ -44,7 +44,7 @@ const SpecialPRoducts = () => {
               <button type="button" className="feature-icon icon-left" onClick={() => previouSide(Speciallaptops, 20)}>
                 <FiChevronLeft className="icon" />
               </button>
-              <button type="button" classNam="feature-icon icon-right" onClick={() => nextSide(Speciallaptops, 20)}>
+              <button type="button" className="feature-icon icon-right" onClick={() => nextSide(Speciallaptops, 20)}>
                 <FiChevronRight className="icon" />
               </button>
             </div>
