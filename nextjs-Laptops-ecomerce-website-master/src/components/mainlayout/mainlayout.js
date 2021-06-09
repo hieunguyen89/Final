@@ -1,26 +1,21 @@
-import React from 'react';
-import Navbar from '../../components/navbar';
-import Footer from '../../components/footer';
-import NewsLetter from '../../components/NewsLetter.js/index.js';
-import CartProvider from '../../components/context';
-import GlobalStyle, { Container } from '../../globalStyles';
-const Layout =({children})  => {
-     return (
-         <>
-            <CartProvider>
-                <GlobalStyle/>
-                <Navbar />
-                <main>
-                    {children}
-                </main>
-            
-            
-                <NewsLetter/>
-                <Footer/>
-            
-            </CartProvider>
-        </>
-     )
+import React from "react";
+import Navbar from "../navbar";
+import Footer from "../footer";
+import NewsLetter from "../NewsLetter.js/index.js";
+import CartProvider from "../context";
+import GlobalStyle, { Container } from "../../globalStyles";
+import SearchBarSection from "../searchbar/search";
 
- }
- export default Layout;
+const Layout = ({ children }) => (
+  <>
+    <CartProvider>
+      <GlobalStyle />
+      <Navbar />
+      <SearchBarSection />
+      <main>{children}</main>
+      <NewsLetter />
+      <Footer />
+    </CartProvider>
+  </>
+);
+export default Layout;

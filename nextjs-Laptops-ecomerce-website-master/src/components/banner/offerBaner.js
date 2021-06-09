@@ -1,21 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
-import { colors } from '../../../utilits/styles';
-import { rotate } from '../SubBanner/keyframes';
+import React from "react";
+import styled from "styled-components";
+import { colors } from "../../../utilits/styles";
+import { rotate } from "../SubBanner/keyframes";
 
-const OfferBaner = () => {
-  return (
-    <OfferWraper>
-      <div className='offer-content'>
-        <p className='offer-content-p'>HUGE DISCOUNT ALL OVER $100</p>
-        <h2 className='offer-title'>Buy laptops & desks Online</h2>
-      </div>
-    </OfferWraper>
-  );
-};
+const OfferBaner = () => (
+  <OfferWraper>
+    <div className="offer-content">
+      <p className="offer-content-p">HUGE DISCOUNT ALL OVER $100</p>
+      <h2 className="offer-title">Buy laptops & desks Online</h2>
+    </div>
+  </OfferWraper>
+);
 
 const OfferWraper = styled.div`
-  background: center / cover no-repeat url('/img/offer.jpg');
+  background: center / cover no-repeat url("/img/offer.jpg");
   display: flex;
   justify-content: center;
   padding: 1.5rem;
@@ -27,7 +25,7 @@ const OfferWraper = styled.div`
   margin-bottom: 2rem;
   height: 5rem;
   ::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -37,7 +35,7 @@ const OfferWraper = styled.div`
     background: rgba(0, 0, 0, 0.6);
   }
   ::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;

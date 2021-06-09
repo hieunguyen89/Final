@@ -1,61 +1,51 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FooterList, SocialMedia, PaymentBrands } from '../../../utilits';
-import FooterLink from './FooterLink';
-import { colors } from '../../../utilits/styles';
-import { Container } from '../../globalStyles';
+import React from "react";
+import styled from "styled-components";
+import { FooterList, SocialMedia, PaymentBrands } from "../../../utilits";
+import FooterLink from "./FooterLink";
+import { colors } from "../../../utilits/styles";
+import { Container } from "../../globalStyles";
 
-const Footer = () => {
-  return (
-    <>
-      <FooterWrapper>
-        <Container>
-          <UpperFooterWrapper>
-            {FooterList.map((footerLinks, index) => (
-              <FooterLink key={index} footerLinks={footerLinks} />
-            ))}
-          </UpperFooterWrapper>
-          <LowerFooter>
-            <div className='lower-content'>
-              <div className='soical-media'>
-                <ul>
-                  {SocialMedia.map((meida, index) => {
-                    return (
-                      <li className='social-items' key={index}>
-                        <a href='#' className='social-link'>
-                          {meida}
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-              <div className='copyRight copy-one'>
-                © 2020 - Ecommerce software by ShuukeAden
-              </div>
-              <div className='payment-methods'>
-                <ul>
-                  {PaymentBrands.map((payment, index) => {
-                    return (
-                      <li className='payment-items' key={index}>
-                        <a href='#' className='payment-link'>
-                          {payment}
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-              <div className='copyRight copy-two'>
-                © 2020 - Ecommerce software by ShuukeAden
-              </div>
+const Footer = () => (
+  <>
+    <FooterWrapper>
+      <Container>
+        <UpperFooterWrapper>
+          {FooterList.map((footerLinks, index) => (
+            <FooterLink key={index} footerLinks={footerLinks} />
+          ))}
+        </UpperFooterWrapper>
+        <LowerFooter>
+          <div className="lower-content">
+            <div className="soical-media">
+              <ul>
+                {SocialMedia.map((meida, index) => (
+                  <li className="social-items" key={index}>
+                    <a href="#" className="social-link">
+                      {meida}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </LowerFooter>
-        </Container>
-      </FooterWrapper>
-    </>
-  );
-};
+            <div className="copyRight copy-one">© 2020 - Ecommerce software by ShuukeAden</div>
+            <div className="payment-methods">
+              <ul>
+                {PaymentBrands.map((payment, index) => (
+                  <li className="payment-items" key={index}>
+                    <a href="#" className="payment-link">
+                      {payment}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="copyRight copy-two">© 2020 - Ecommerce software by ShuukeAden</div>
+          </div>
+        </LowerFooter>
+      </Container>
+    </FooterWrapper>
+  </>
+);
 
 const FooterWrapper = styled.div`
   background: #000000;
@@ -88,8 +78,7 @@ const UpperFooterWrapper = styled.div`
     overflow: hidden;
     visibility: hidden;
     z-index: -1;
-    transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s,
-      z-index 0s linear 0.01s;
+    transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
     .inner-links {
       display: flex;
       color: ${colors.camea};

@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -24,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
 *::-webkit-scrollbar-track {
   background: #fff;
 }
+
 *::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.2);
 }

@@ -1,19 +1,18 @@
-import React from 'react';
+import React from "react";
 
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from "styled-components";
 
-import { OurService } from '../../../utilits';
-import Service from './Service';
-import { colors } from '../../../utilits/styles';
-const Services = () => {
-  return (
-    <ServicesWrapper>
-      {OurService.map((service, index) => (
-        <Service key={index} service={service} />
-      ))}
-    </ServicesWrapper>
-  );
-};
+import { OurService } from "../../../utilits";
+import Service from "./Service";
+import { colors } from "../../../utilits/styles";
+
+const Services = () => (
+  <ServicesWrapper>
+    {OurService.map((service, index) => (
+      <Service key={index} service={service} />
+    ))}
+  </ServicesWrapper>
+);
 
 const iconAnimate = keyframes`
   0% {

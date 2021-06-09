@@ -1,21 +1,19 @@
-import React from 'react';
-import SubCard from './SubCard';
-import styled from 'styled-components';
-import OfferBaner from '../Banner/OfferBaner';
-import { colors } from '../../../utilits/styles';
-import { rotate } from './keyframes';
+import React from "react";
+import styled from "styled-components";
+import SubCard from "./SubCard";
+import OfferBaner from "../Banner/OfferBaner";
+import { colors } from "../../../utilits/styles";
+import { rotate } from "./keyframes";
 
-const Subbaners = ({ inverse, subbanners }) => {
-	return (
-		<>
-			<SubbanerWrapper>
-				{subbanners.map((subbanner, index) => (
-					<SubCard inverse={inverse} key={index} subbanner={subbanner} />
-				))}
-			</SubbanerWrapper>
-		</>
-	);
-};
+const Subbaners = ({ inverse, subbanners }) => (
+  <>
+    <SubbanerWrapper>
+      {subbanners.map((subbanner, index) => (
+        <SubCard inverse={inverse} key={index} subbanner={subbanner} />
+      ))}
+    </SubbanerWrapper>
+  </>
+);
 const SubbanerWrapper = styled.div`
   display:flex;
   flex-direction:column;
@@ -31,8 +29,7 @@ const SubbanerWrapper = styled.div`
     border-radius: 0.3rem;
     overflow: hidden;
     display: flex;
-    flex-direction: ${(props) =>
-			props.inverse === true ? 'row-reverse' : 'row'};
+    flex-direction: ${(props) => (props.inverse === true ? "row-reverse" : "row")};
     justify-content: space-between;
     padding: 1rem;
     margin: .5rem 0;
