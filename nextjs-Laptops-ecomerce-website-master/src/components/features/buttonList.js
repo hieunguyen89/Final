@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 import React from "react";
 import { BsEye } from "react-icons/bs";
 import { FiHeart } from "react-icons/fi";

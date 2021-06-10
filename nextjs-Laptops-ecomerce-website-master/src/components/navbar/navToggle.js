@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const NavToggle = ({ navbar }) => (
   <li className="nav-items">
-    <Link href="/detailPage">
+    <Link href="/laptops">
       <a className="nav-links">{navbar.title}</a>
     </Link>
   </li>

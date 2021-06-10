@@ -1,70 +1,44 @@
-import React, { useCallback, useState } from "react";
-import Dropdown from "react-dropdown";
+import React, { useState } from "react";
+import { useRouter } from "next/router";
 import styled from "styled-components";
-import { RecentArival } from "../../../utilits/laptops";
 
-const options = ["HP", "Asus", "Dell"];
-const defaultOption = options[0];
+export default function IndexPage() {
+  const [searchQuery, setSearchQuery] = useState({
+    brand: "",
+    name: "",
+  });
+  const router = useRouter();
 
-const SearchBarSection = () => {
-  const [search, setSearch] = useState("");
-  const [brand, setBrand] = useState("HP");
-  const [products, setProducts] = useState(RecentArival);
-
-  const onSearch = useCallback(() => {
-    setProducts(RecentArival.filter((laptop) => laptop.title.toLowerCase().includes(search) && laptop.brand === brand));
-  }, [search, brand]);
-
-  const handleSearch = (e) => {
-    setSearch(e.target.value.toLowerCase());
+  const handleChangeBrand = (e) => {
+    const { value } = e.target;
+    setSearchQuery({ ...searchQuery, brand: value });
   };
-
-  const onSelect = (option) => {
-    setBrand(option.label);
+  const handleChangeName = (e) => {
+    const { value } = e.target;
+    setSearchQuery({ ...searchQuery, name: value });
   };
-
-  const changePage = useCallback(() => {
-    onSearch();
-    sessionStorage.setItem(search, brand);
-    window.open("searchPage");
-  }, [search, brand]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    router.push({
+      pathname: "/search",
+      query: { brand: searchQuery.brand, name: searchQuery.name },
+    });
+  };
 
   return (
-    <Wrapper>
-      <div className="searchBarSection">
-        <Dropdown options={options} onChange={onSelect} value={defaultOption} placeholder="Select an option" />;
-        <div className="searchBar">
-          <input className="input" onChange={handleSearch} />
-          <button type="button" className="button" onClick={changePage}>
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-          </button>
-        </div>
-        <div className="display">
-          {products.map((laptop) => (
-            <div key={laptop.title} className="product">
-              <h6>{laptop.brand}</h6>
-              <h3>{laptop.title}</h3>
-              <h5>{laptop.price}</h5>
-            </div>
-          ))}
-        </div>
-      </div>
-    </Wrapper>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <select defaultValue="dell" onChange={handleChangeBrand}>
+          <option value="dell">Dell</option>
+          <option value="hp">HP</option>
+          <option value="asus">Asus</option>
+        </select>
+        <input type="text" value={searchQuery.name} onChange={handleChangeName} />
+        <button type="submit">Search</button>
+      </form>
+    </div>
   );
-};
+}
 
 const Wrapper = styled.div`
   .searchBarSection {
@@ -109,4 +83,3 @@ const Wrapper = styled.div`
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;
-export default SearchBarSection;

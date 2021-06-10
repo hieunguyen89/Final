@@ -9,7 +9,7 @@ const BannerSlider = ({ title, subtitle }) => (
         <div className="bannerSlide-contnt">
           <p>{title}</p>
           <h1 className="banner-title">{subtitle}</h1>
-          <Link href="/detailPage">
+          <Link href="/laptops">
             <a className="banner-button">explore more</a>
           </Link>
         </div>

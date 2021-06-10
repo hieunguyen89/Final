@@ -14,8 +14,9 @@ const Brands = ({ brands }) => (
     </div>
     <ul className="brands-ul">
       {brands.map((brand, index) => (
+        // eslint-disable-next-line react/no-array-index-key
         <li className="brand-items" key={index}>
-          <a href="/detailPage" className="brand-link">
+          <a href="/laptops" className="brand-link">
             {brand}
           </a>
         </li>

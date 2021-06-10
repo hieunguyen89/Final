@@ -1,11 +1,9 @@
+/* eslint-disable react/button-has-type */
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { FiHeart, FiChevronUp, FiChevronDown } from "react-icons/fi";
 import { CgMenuLeft } from "react-icons/cg";
-
 import { colors } from "../../utilits/styles";
-import Brands from "../components/Banner/Brands";
-import { brands } from "../../utilits";
 import { cartContext } from "../components/context";
 
 const ProductDetail = ({ laptop }) => {
@@ -13,9 +11,7 @@ const ProductDetail = ({ laptop }) => {
   return (
     <ProductWrapper>
       <div className="cart-top">
-        <div className="brandwrap">
-          <Brands brands={brands} />
-        </div>
+        <div className="brandwrap" />
         <div className="img-wrap">
           <div className="img-top">
             <img src={`/img/${laptop.img}.png`} alt="" className="img-top-img" />

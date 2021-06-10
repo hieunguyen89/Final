@@ -1,7 +1,8 @@
+/* eslint-disable react/button-has-type */
 import React, { useState, useContext } from "react";
 import { useRouter } from "next/router";
 import { MdStar, MdStarHalf } from "react-icons/md";
-import { FeatureWrapper, ButtonModel } from "./styles";
+import { FeatureWrapper } from "./styles";
 import ButtonList from "./buttonList";
 import AddedCart from "./AddedCart";
 import Spining from "../Spining";
@@ -20,7 +21,7 @@ const CardFeatures = ({ laptop, load }) => {
         setSpining(false);
       }, 1000);
     }
-    router.push(`/detailPage/${laptop.slug}`);
+    router.push(`/laptops/${laptop.slug}`);
   };
   return (
     <>

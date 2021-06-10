@@ -14,7 +14,7 @@ export const Navheader = [
   {
     id: 2,
     title: "laptops",
-    link: "/detailPage",
+    link: "/laptops",
   },
   {
     id: 3,
