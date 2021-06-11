@@ -101,7 +101,7 @@ export const RecentArival = [
   },
   {
     id: 7,
-    brand: "lenovo",
+    brand: "Lenovo",
     title: "Lenovo Education 14e",
     slug: "Lenovo-Education-14e",
     img: 13,
@@ -117,7 +117,7 @@ export const RecentArival = [
   },
   {
     id: 8,
-    brand: "lenovo",
+    brand: "Lenovo",
     title: "Lenovo Ideapad D330-10",
     slug: "Lenovo-Ideapad-D330-14e",
     img: 25,

@@ -1,4 +1,6 @@
+/* eslint-disable react/react-in-jsx-scope */
 import Head from "next/head";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function MyApp({ Component, pageProps }) {
   <Head>

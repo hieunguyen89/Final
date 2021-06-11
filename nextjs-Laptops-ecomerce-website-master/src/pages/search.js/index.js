@@ -16,10 +16,11 @@ export default function Result() {
     setProducts(
       RecentArival.filter(
         (laptop) =>
-          laptop.title.toLowerCase().includes(router.query.name) && laptop.brand.toLowerCase() === router.query.brand,
+          laptop.title.toLowerCase().includes(router.query.name.toLowerCase()) &&
+          laptop.brand.toLowerCase() === router.query.brand.toLowerCase(),
       ),
     );
-  }, []);
+  }, [router]);
 
   return (
     <>

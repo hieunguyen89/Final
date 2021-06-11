@@ -6,6 +6,7 @@ const CartNav = ({ total, subTotal, cartItems }) => (
   <div className="cart-wrap">
     <div className="cart-top-container">
       {cartItems.map((item, index) => (
+        // eslint-disable-next-line react/no-array-index-key
         <div className="cart-top" key={index}>
           <div className="img-container">
             <img src={`/img/${item.img}.png`} alt="laptop" />
@@ -36,7 +37,9 @@ const CartNav = ({ total, subTotal, cartItems }) => (
       <div className="shipping">Total (tax incl.)</div>
       <div className="total">{total}</div>
     </div>
-    <button className="viewCart">view Cart</button>
+    <button type="button" className="viewCart">
+      view Cart
+    </button>
   </div>
 );
 

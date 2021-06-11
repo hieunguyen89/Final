@@ -1,17 +1,15 @@
 import React from "react";
 import Navbar from "../navbar";
 import Footer from "../footer";
-import NewsLetter from "../NewsLetter.js/index.js";
+import NewsLetter from "../newsLetter.js/index";
 import CartProvider from "../context";
-import GlobalStyle, { Container } from "../../globalStyles";
-import SearchBarSection from "../searchbar/search";
+import GlobalStyle from "../../globalStyles";
 
 const Layout = ({ children }) => (
   <>
     <CartProvider>
       <GlobalStyle />
       <Navbar />
-      <SearchBarSection />
       <main>{children}</main>
       <NewsLetter />
       <Footer />

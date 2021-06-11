@@ -12,8 +12,10 @@
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx,json}\""
   },
   "dependencies": {
+    "bootstrap": "^4.6.0",
     "next": "9.5.3",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.6.1",
     "react-dom": "16.13.1",
     "react-dropdown": "^1.9.2",
     "react-elastic-carousel": "^0.7.5",

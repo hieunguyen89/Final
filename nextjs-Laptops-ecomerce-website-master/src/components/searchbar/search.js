@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import { FaSearch } from "react-icons/fa";
 import { useRouter } from "next/router";
 import styled from "styled-components";
+import { Form, FormControl } from "react-bootstrap";
 
-export default function IndexPage() {
+export default function SearchPage() {
   const [searchQuery, setSearchQuery] = useState({
-    brand: "",
+    brand: "dell",
     name: "",
   });
   const router = useRouter();
@@ -26,17 +28,24 @@ export default function IndexPage() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <select defaultValue="dell" onChange={handleChangeBrand}>
-          <option value="dell">Dell</option>
-          <option value="hp">HP</option>
-          <option value="asus">Asus</option>
-        </select>
-        <input type="text" value={searchQuery.name} onChange={handleChangeName} />
-        <button type="submit">Search</button>
-      </form>
-    </div>
+    <Wrapper>
+      <div>
+        <Form onSubmit={handleSubmit} inline>
+          <select defaultValue="dell" onChange={handleChangeBrand}>
+            <option value="dell">Dell</option>
+            <option value="hp">HP</option>
+            <option value="lenovo">Lenovo</option>
+            <option value="acer">Acer</option>
+            <option value="apple">Apple</option>
+            <option value="samsung">SamSung</option>
+          </select>
+          <input type="text" value={searchQuery.name} onChange={handleChangeName} placeholder="Search" />
+          <button type="submit">
+            <FaSearch /> Search
+          </button>
+        </Form>
+      </div>
+    </Wrapper>
   );
 }
 
@@ -68,18 +77,8 @@ const Wrapper = styled.div`
     width: 25px;
     border-radius: 20px;
   }
-
   .display {
     display: flex;
     flex-wrap: wrap;
-  }
-
-  .product {
-    margin: 20px;
-    width: 200px;
-    padding: 20px;
-    border-radius: 20px;
-    background-color: #f9d5d3;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   }
 `;

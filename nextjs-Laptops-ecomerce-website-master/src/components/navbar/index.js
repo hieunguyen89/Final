@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import styled, { keyframes } from "styled-components";
-import { FaSearch, FaShoppingCart, FaBars } from "react-icons/fa";
+import { FaShoppingCart, FaBars } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 import { Container } from "../../globalStyles";
 import { colors } from "../../../utilits/styles";
@@ -8,6 +8,7 @@ import Navitems from "./navItems";
 import { Navheader } from "../../../utilits";
 import CartNav from "./cartNav";
 import { cartContext } from "../context";
+import SearchPage from "../searchbar/search";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -54,11 +55,7 @@ const Navbar = () => {
             <p className="work-ours">we are Open 24/7</p>
             <div className="upper-nav-right">
               <div className="nav-search">
-                <input type="text" className="nav-input" />
-                <FaSearch />
-              </div>
-              <div className="signUp">
-                <p>hey sign in...</p>
+                <SearchPage />
               </div>
             </div>
           </div>
