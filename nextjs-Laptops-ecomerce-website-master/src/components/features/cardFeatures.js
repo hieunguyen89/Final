@@ -1,5 +1,5 @@
 /* eslint-disable react/button-has-type */
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useCallback } from "react";
 import { useRouter } from "next/router";
 import { MdStar, MdStarHalf } from "react-icons/md";
 import { FeatureWrapper } from "./styles";
@@ -10,8 +10,8 @@ import { cartContext } from "../context";
 import ButtonsModel from "./buttosModel";
 
 const CardFeatures = ({ laptop, load }) => {
-  const { Open, addCart, setOpen, wishList, setwishList, compare, setCompare } = useContext(cartContext);
-
+  const { addCart, wishList, setwishList, compare, setCompare } = useContext(cartContext);
+  const [toAdd, setToAdd] = useState(false);
   const [spining, setSpining] = useState(false);
   const router = useRouter();
   const goDetail = () => {
@@ -19,16 +19,21 @@ const CardFeatures = ({ laptop, load }) => {
       setSpining(true);
       setTimeout(() => {
         setSpining(false);
-      }, 1000);
+      }, 100);
     }
     router.push(`/laptops/${laptop.slug}`);
   };
+
+  const onToggle = useCallback(() => {
+    setToAdd(!toAdd);
+  }, [toAdd]);
+
   return (
     <>
       <Spining spining={spining} />
       <div className="feature-cards">
         <ButtonList
-          setOpen={setOpen}
+          setOpen={onToggle}
           id={laptop.id}
           addCart={addCart}
           goDetail={goDetail}
@@ -60,9 +65,11 @@ const CardFeatures = ({ laptop, load }) => {
         </div>
       </div>
       <FeatureWrapper>
-        <div className={Open ? "model-cart open" : "model-cart"}>
-          <AddedCart setOpen={setOpen} laptop={laptop} />
-        </div>
+        {toAdd ? (
+          <div className={toAdd ? "model-cart open" : "model-cart"}>
+            <AddedCart setClose={onToggle} id={laptop.id} />
+          </div>
+        ) : null}
         <div className={wishList ? "model-cart button-model" : "model-cart"}>
           <ButtonsModel setOPenmodels={setwishList} text="You must be logged in to manage your wishlist" />
         </div>

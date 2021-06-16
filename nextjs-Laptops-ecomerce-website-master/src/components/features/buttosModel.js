@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable react/react-in-jsx-scope */
 import { ImCross } from "react-icons/im";
 
 const ButtonsModel = ({ setOPenmodels, text }) => (

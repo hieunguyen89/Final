@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import { Form, FormControl } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 
 export default function SearchPage() {
   const [searchQuery, setSearchQuery] = useState({

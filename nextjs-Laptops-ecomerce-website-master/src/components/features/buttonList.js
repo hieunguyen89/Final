@@ -29,7 +29,7 @@ const ButtonList = ({ addCart, setOpen, setwishList, setCompare, goDetail, id })
     <button
       className="icon-list"
       onClick={() => {
-        setOpen(true);
+        setOpen();
         addCart(id);
       }}
     >

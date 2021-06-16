@@ -1,8 +1,13 @@
+/* eslint-disable no-restricted-globals */
+/* eslint-disable react/self-closing-comp */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable import/extensions */
+/* eslint-disable import/order */
 import React, { useState, useEffect, useContext, useRef } from "react";
 import styled, { keyframes } from "styled-components";
+import { Container } from "../../globalStyles";
 import { FaShoppingCart, FaBars } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
-import { Container } from "../../globalStyles";
 import { colors } from "../../../utilits/styles";
 import Navitems from "./navItems";
 import { Navheader } from "../../../utilits";
@@ -20,8 +25,7 @@ const Navbar = () => {
   useEffect(() => {
     if (navCart) {
       const handleSidebarRight = (e) => {
-        // eslint-disable-next-line no-restricted-globals
-        if (ref.current && !ref.current.contains(event.target)) {
+        if (ref.current && !ref.current.contains(e.target)) {
           setNavcart(false);
         }
       };
@@ -57,6 +61,9 @@ const Navbar = () => {
               <div className="nav-search">
                 <SearchPage />
               </div>
+              <div className="signUp">
+                <p>hey sign in...</p>
+              </div>
             </div>
           </div>
         </Container>
@@ -72,29 +79,23 @@ const Navbar = () => {
                   S<span>t</span>ore
                 </h1>
               </a>
-              {toggle && <div className="overlay" />}
+              {toggle && <div className="overlay"></div>}
               <ul className="nav-ul">
-                {Navheader.map((navbar) => (
-                  <Navitems key={navbar.id} navbar={navbar} />
-                ))}
-              </ul>
-              <ul className={toggle ? "nav-ul-sm toggle" : "nav-ul-sm"}>
-                <ImCross />
-                <p>menue</p>
                 {Navheader.map((navbar) => (
                   <Navitems key={navbar.id} navbar={navbar} />
                 ))}
               </ul>
 
               <div className="right-icons">
-                <FaBars className="icon-right icon-menue" onClick={() => setToggle(true)} />
-                <FaShoppingCart className="icon-right icon-cart" />
-                <div className="batch">{cartItems.length}</div>
-                {cartItems.length > 0 && (
-                  <div className={navCart ? "cart-nav" : "hide"} ref={ref}>
-                    <CartNav cartItems={cartItems} total={total} subTotal={subTotal} />
-                  </div>
-                )}
+                <div className="cart" onClick={() => setNavcart(!navCart)}>
+                  <FaShoppingCart className="icon-right icon-cart" />
+                  <div className="batch">{cartItems.length}</div>
+                  {cartItems.length > 0 && (
+                    <div className={navCart ? "cart-nav" : "hide"} ref={ref}>
+                      <CartNav cartItems={cartItems} total={total} subTotal={subTotal} />
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </Container>

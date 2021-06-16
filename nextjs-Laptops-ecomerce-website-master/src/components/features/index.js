@@ -1,8 +1,9 @@
+/* eslint-disable react/button-has-type */
 import React, { useState, useEffect, useRef } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { RecentArival } from "../../../utilits/Laptops";
 import CardFeatures from "./CardFeatures";
-import { FeaturesHearder, FeatureCard, FeatureWrapper } from "./styles";
+import { FeaturesHearder, FeatureCard } from "./styles";
 
 const Features = ({ title, load }) => {
   const [width, setWidth] = useState(0);
