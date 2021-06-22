@@ -1,3 +1,5 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react/button-has-type */
 import React from "react";
 import { MdStar, MdStarHalf } from "react-icons/md";
 import { BsEye } from "react-icons/bs";

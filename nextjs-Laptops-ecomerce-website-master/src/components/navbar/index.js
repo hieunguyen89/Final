@@ -3,23 +3,22 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable import/extensions */
 /* eslint-disable import/order */
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { FaShoppingCart } from "react-icons/fa";
 import styled, { keyframes } from "styled-components";
-import { Container } from "../../globalStyles";
-import { FaShoppingCart, FaBars } from "react-icons/fa";
-import { ImCross } from "react-icons/im";
-import { colors } from "../../../utilits/styles";
-import Navitems from "./navItems";
 import { Navheader } from "../../../utilits";
-import CartNav from "./cartNav";
+import { colors } from "../../../utilits/styles";
+import { Container } from "../../globalStyles";
 import { cartContext } from "../context";
 import SearchPage from "../searchbar/search";
+import CartNav from "./cartNav";
+import Navitems from "./navItems";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [navStick, setNavStick] = useState(false);
   const [navCart, setNavcart] = useState(false);
-  const { cartItems, total, subTotal } = useContext(cartContext);
+  const { cartItems, total, subTotal, setCartItems } = useContext(cartContext);
   const ref = useRef(null);
 
   useEffect(() => {
@@ -87,12 +86,12 @@ const Navbar = () => {
               </ul>
 
               <div className="right-icons">
-                <div className="cart" onClick={() => setNavcart(!navCart)}>
-                  <FaShoppingCart className="icon-right icon-cart" />
+                <div className="cart" ref={ref}>
+                  <FaShoppingCart className="icon-right icon-cart" onClick={() => setNavcart(!navCart)} />
                   <div className="batch">{cartItems.length}</div>
                   {cartItems.length > 0 && (
-                    <div className={navCart ? "cart-nav" : "hide"} ref={ref}>
-                      <CartNav cartItems={cartItems} total={total} subTotal={subTotal} />
+                    <div className={navCart ? "cart-nav" : "hide"}>
+                      <CartNav cartItems={cartItems} total={total} subTotal={subTotal} setCartItems={setCartItems} />
                     </div>
                   )}
                 </div>

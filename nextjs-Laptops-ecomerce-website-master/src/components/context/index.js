@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React, { createContext, useState, useEffect } from "react";
 import { RecentArival } from "../../../utilits/Laptops";
 
@@ -48,6 +49,7 @@ const CartProvider = ({ children }) => {
           Open,
           wishList,
           compare,
+          setCartItems,
           addCart,
           setwishList,
           setCompare,

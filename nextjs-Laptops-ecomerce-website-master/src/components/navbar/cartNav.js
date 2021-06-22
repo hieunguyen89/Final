@@ -3,7 +3,10 @@
 import React from "react";
 import { ImCross } from "react-icons/im";
 
-const CartNav = ({ total, subTotal, cartItems }) => {
+const CartNav = ({ total, subTotal, cartItems, setCartItems }) => {
+  const handleDelete = (id) => {
+    setCartItems(cartItems.filter((item) => item.id !== id));
+  };
   return (
     //
     <div className="cart-wrap">
@@ -21,7 +24,9 @@ const CartNav = ({ total, subTotal, cartItems }) => {
                 <div className="price">{item.total}</div>
               </div>
               <div className="close-btn">
-                <ImCross className="close-icon" />
+                <button type="button" onClick={() => handleDelete(item.id)}>
+                  <ImCross />
+                </button>
               </div>
             </div>
           );
@@ -42,7 +47,7 @@ const CartNav = ({ total, subTotal, cartItems }) => {
         <div className="total">{total}</div>
       </div>
       <button type="button" className="viewCart">
-        view Cart
+        Proceed to checkout
       </button>
     </div>
   );
