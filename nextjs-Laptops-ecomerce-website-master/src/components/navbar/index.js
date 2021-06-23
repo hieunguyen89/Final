@@ -3,16 +3,18 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable import/extensions */
 /* eslint-disable import/order */
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState, useCallback } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import styled, { keyframes } from "styled-components";
 import { Navheader } from "../../../utilits";
 import { colors } from "../../../utilits/styles";
 import { Container } from "../../globalStyles";
 import { cartContext } from "../context";
+import Checkout from "../features/checkout";
 import SearchPage from "../searchbar/search";
 import CartNav from "./cartNav";
 import Navitems from "./navItems";
+import { FeatureWrapper } from "../features/styles";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -20,6 +22,12 @@ const Navbar = () => {
   const [navCart, setNavcart] = useState(false);
   const { cartItems, total, subTotal, setCartItems } = useContext(cartContext);
   const ref = useRef(null);
+  const [checkout, setCheckout] = useState(false);
+
+  // functions
+  const onToggle = useCallback(() => {
+    setCheckout(!checkout);
+  }, [checkout]);
 
   useEffect(() => {
     if (navCart) {
@@ -91,11 +99,24 @@ const Navbar = () => {
                   <div className="batch">{cartItems.length}</div>
                   {cartItems.length > 0 && (
                     <div className={navCart ? "cart-nav" : "hide"}>
-                      <CartNav cartItems={cartItems} total={total} subTotal={subTotal} setCartItems={setCartItems} />
+                      <CartNav
+                        cartItems={cartItems}
+                        total={total}
+                        subTotal={subTotal}
+                        setCartItems={setCartItems}
+                        openCheckout={onToggle}
+                      />
                     </div>
                   )}
                 </div>
               </div>
+              <FeatureWrapper>
+                {checkout ? (
+                  <div className={checkout ? "model-cart open" : "model-cart"}>
+                    <Checkout onClose={onToggle} cartItems={cartItems} total={total} subTotal={subTotal} />
+                  </div>
+                ) : null}
+              </FeatureWrapper>
             </div>
           </Container>
         </div>

@@ -3,7 +3,7 @@
 import React from "react";
 import { ImCross } from "react-icons/im";
 
-const CartNav = ({ total, subTotal, cartItems, setCartItems }) => {
+const CartNav = ({ total, subTotal, cartItems, setCartItems, openCheckout }) => {
   const handleDelete = (id) => {
     setCartItems(cartItems.filter((item) => item.id !== id));
   };
@@ -46,7 +46,7 @@ const CartNav = ({ total, subTotal, cartItems, setCartItems }) => {
         <div className="shipping">Total (tax incl.)</div>
         <div className="total">{total}</div>
       </div>
-      <button type="button" className="viewCart">
+      <button type="button" className="viewCart" onClick={openCheckout}>
         Proceed to checkout
       </button>
     </div>

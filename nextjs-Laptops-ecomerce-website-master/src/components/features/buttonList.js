@@ -5,7 +5,7 @@ import { FiHeart } from "react-icons/fi";
 import { CgMenuLeft } from "react-icons/cg";
 import { FaShoppingCart } from "react-icons/fa";
 
-const ButtonList = ({ addCart, setOpen, setwishList, setCompare, goDetail, id }) => (
+const ButtonList = ({ addCart, setwishList, setCompare, goDetail, id }) => (
   <div className="buttons-list">
     <button
       className="icon-list"
@@ -29,7 +29,6 @@ const ButtonList = ({ addCart, setOpen, setwishList, setCompare, goDetail, id })
     <button
       className="icon-list"
       onClick={() => {
-        setOpen();
         addCart(id);
       }}
     >
