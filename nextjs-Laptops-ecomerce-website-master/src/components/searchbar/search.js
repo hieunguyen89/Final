@@ -30,8 +30,8 @@ export default function SearchPage() {
   return (
     <Wrapper>
       <div>
-        <Form onSubmit={handleSubmit} inline>
-          <select defaultValue="dell" onChange={handleChangeBrand}>
+        <Form onSubmit={handleSubmit}>
+          <select defaultValue="dell" onChange={handleChangeBrand} style={{ margin: 5, height: 27 }}>
             <option value="dell">Dell</option>
             <option value="hp">HP</option>
             <option value="lenovo">Lenovo</option>

@@ -1,6 +1,7 @@
+/* eslint-disable react/no-array-index-key */
 import React from "react";
 import styled from "styled-components";
-import { FooterList, SocialMedia, PaymentBrands } from "../../../utilits";
+import { SocialMedia, PaymentBrands } from "../../../utilits";
 import FooterLink from "./FooterLink";
 import { colors } from "../../../utilits/styles";
 import { Container } from "../../globalStyles";
@@ -9,11 +10,6 @@ const Footer = () => (
   <>
     <FooterWrapper>
       <Container>
-        <UpperFooterWrapper>
-          {FooterList.map((footerLinks, index) => (
-            <FooterLink key={index} footerLinks={footerLinks} />
-          ))}
-        </UpperFooterWrapper>
         <LowerFooter>
           <div className="lower-content">
             <div className="soical-media">
@@ -27,7 +23,7 @@ const Footer = () => (
                 ))}
               </ul>
             </div>
-            <div className="copyRight copy-one">© 2020 - Ecommerce software by ShuukeAden</div>
+            <div className="copyRight copy-one">© 2021 - Ecommerce Website by Syrus</div>
             <div className="payment-methods">
               <ul>
                 {PaymentBrands.map((payment, index) => (
@@ -39,7 +35,7 @@ const Footer = () => (
                 ))}
               </ul>
             </div>
-            <div className="copyRight copy-two">© 2020 - Ecommerce software by ShuukeAden</div>
+            <div className="copyRight copy-two">© 2021 - Ecommerce Website by Syrus</div>
           </div>
         </LowerFooter>
       </Container>

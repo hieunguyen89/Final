@@ -24,13 +24,13 @@ export const Navheader = [
 
   {
     id: 4,
-    title: "legal active",
-    link: "/legalPage",
+    title: "Login",
+    link: "/loginPage",
   },
   {
     id: 5,
-    title: "secure payment",
-    link: "/paymentPage",
+    title: "Sign Up",
+    link: "/signupPage",
   },
   {
     id: 6,
@@ -115,143 +115,3 @@ export const timeStamps = [
 ];
 
 // Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, sapiente natus quibusdam culpa aliquid animi voluptatibus eaque, nisi voluptates doloremque nobis sed soluta tempora quasi aspernatur numquam rem ipsam placeat.
-export const ourBlogs = [
-  {
-    title: "consectetur adipisicing elit",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, sapiente natus quibusdam culpa aliquid animi voluptatibus eaque nisi voluptates.",
-    img: 1,
-    date: "25 october",
-    hit: 15,
-  },
-  {
-    title: "aliquid animi voluptatibus eaque",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, sapiente natus quibusdam culpa aliquid animi voluptatibus eaque nisi voluptates.",
-    img: 2,
-    date: "16 november",
-    hit: 17,
-  },
-  {
-    title: "sapiente natus quibusdam culpa",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, sapiente natus quibusdam culpa aliquid animi voluptatibus eaque nisi voluptates.",
-    img: 3,
-    date: "26 sebtember",
-    hit: 26,
-  },
-  {
-    title: "Lorem ipsum dolor sit",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, sapiente natus quibusdam culpa aliquid animi voluptatibus eaque nisi voluptates.",
-    img: 4,
-    date: "21 december",
-    hit: 22,
-  },
-  {
-    title: "quibusdam culpa aliquid animi",
-    text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, sapiente natus quibusdam culpa aliquid animi voluptatibus eaque nisi voluptates.",
-    img: 5,
-    date: "13 julay",
-    hit: 12,
-  },
-];
-
-export const FooterList = [
-  {
-    title: "Quick Link",
-    content: [
-      {
-        text: "Seller Login",
-      },
-      {
-        text: "Seller Sign Up",
-      },
-      {
-        text: "Seller Handbook",
-      },
-      {
-        text: "Seller Control Panel",
-      },
-      {
-        text: "Seller Control Panel",
-      },
-    ],
-  },
-  {
-    title: "Products",
-    content: [
-      {
-        text: "prices drop",
-      },
-      {
-        text: "new Products",
-      },
-      {
-        text: "best sales",
-      },
-      {
-        text: "contact us",
-      },
-      {
-        text: "sitemap",
-      },
-    ],
-  },
-  {
-    title: "Our Company",
-    content: [
-      {
-        text: "delivery",
-      },
-      {
-        text: "legal notice",
-      },
-      {
-        text: "terms and conditions of use",
-      },
-      {
-        text: "about us",
-      },
-      {
-        text: "secure payment",
-      },
-    ],
-  },
-
-  {
-    title: "your Acount",
-    content: [
-      {
-        text: "personal info",
-      },
-      {
-        text: "orders",
-      },
-      {
-        text: "credit slips",
-      },
-      {
-        text: "addresses",
-      },
-    ],
-  },
-
-  {
-    title: "store information",
-    content: [
-      {
-        icon: <MdLocationOn />,
-        text: "portable-laptops store USA",
-      },
-      {
-        icon: <MdLocalHospital />,
-        text: "portable-laptops store USA",
-      },
-      {
-        icon: <MdEmail />,
-        text: "portable-laptops store USA",
-      },
-      {
-        icon: <FaFax />,
-        text: "portable-laptops store USA",
-      },
-    ],
-  },
-];

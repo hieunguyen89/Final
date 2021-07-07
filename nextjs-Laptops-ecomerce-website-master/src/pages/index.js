@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import OfferBaner from "../components/Banner/OfferBaner";
 import CampanyLogos from "../components/Campanies";
 import Features from "../components/features";
-import Ourblog from "../components/Ourblog";
 import Services from "../components/services";
 import SpecialPRoducts from "../components/SpecialProducts.js";
 import Spining from "../components/Spining";
@@ -35,7 +34,7 @@ const index = () => {
           <Features title="Recent Arrival" />
           <Services />
           <SpecialPRoducts />
-          <Ourblog />
+
           <CampanyLogos />
           <Subbaners inverse="true" subbanners={SubbannerLeft} />
         </Container>

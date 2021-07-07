@@ -19,7 +19,7 @@ const Checkout = ({ cartItems, total, subTotal, onClose }) => {
         </div>
       </div>
 
-      <div className="cart-main">
+      <div className="cart-top-container">
         {cartItems.map((item, index) => {
           return (
             <div className="cart-top" key={index}>

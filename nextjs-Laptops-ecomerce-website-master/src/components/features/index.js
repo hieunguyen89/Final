@@ -91,6 +91,7 @@ const Features = ({ title, load }) => {
           <div className="card-slder-wrap" ref={ref}>
             <div className="card-slider">
               {RecentArival.map((laptop, index) => (
+                // eslint-disable-next-line react/no-array-index-key
                 <CardFeatures key={index} laptop={laptop} load={load} />
               ))}
             </div>

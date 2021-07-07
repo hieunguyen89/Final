@@ -10,14 +10,13 @@ export const FeatureWrapper = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    
+    height: 150%;
     z-index: 200;
-    overflow-y: auto;
+    overflow-x: auto;
   }
   .open {
-    display:block;
-	background-color: rgba(0, 0, 0, 0.1);
+    display: block;
+    background-color: rgba(0, 0, 0, 0.1);
   }
   .button-model {
 	display:flex;

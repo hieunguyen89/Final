@@ -1,8 +1,5 @@
-/* eslint-disable no-restricted-globals */
 /* eslint-disable react/self-closing-comp */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable import/extensions */
-/* eslint-disable import/order */
+
 import React, { useContext, useEffect, useRef, useState, useCallback } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import styled, { keyframes } from "styled-components";
@@ -67,9 +64,6 @@ const Navbar = () => {
             <div className="upper-nav-right">
               <div className="nav-search">
                 <SearchPage />
-              </div>
-              <div className="signUp">
-                <p>hey sign in...</p>
               </div>
             </div>
           </div>
